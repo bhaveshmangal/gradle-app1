@@ -37,7 +37,7 @@ tasks.named('test') {
 
 sonarqube {
     properties {
-        property 'sonar.projectKey', 'hello-gradle'
-        property 'sonar.projectName', 'hello-gradle'
+        property 'sonar.projectKey', 'new_update'
+        property 'sonar.projectName', 'new_update'
     }
 }
