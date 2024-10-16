@@ -45,7 +45,7 @@ jobs:
         run: |
           docker run --rm \
           -v $(pwd):/app \
-          -e SONAR_PROJECTKEY="hello-gradle" \
+          -e SONAR_PROJECTKEY="gradleee" \
           -e SONAR_HOST_URL=${{ secrets.SONAR_HOST_URL }} \
           -e SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} \
           blacklocksec/code-scanner:latest
