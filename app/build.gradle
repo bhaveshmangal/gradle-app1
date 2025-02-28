@@ -37,7 +37,7 @@ tasks.named('test') {
 
 sonarqube {
     properties {
-        property 'sonar.projectKey', 'new_update'
-        property 'sonar.projectName', 'new_update'
+        property 'sonar.projectKey', 'N33qWiPgk9KLy6Nw'
+        property 'sonar.projectName', 'N33qWiPgk9KLy6Nw'
     }
 }
