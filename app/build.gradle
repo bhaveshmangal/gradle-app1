@@ -40,10 +40,3 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-
-sonarqube {
-    properties {
-        property 'sonar.projectKey', 'gradle-finish'
-        property 'sonar.projectName', 'gradle-finish'
-    }
-}
