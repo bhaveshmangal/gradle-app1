@@ -34,7 +34,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: sh gradlew build sonar --info -Dsonar.token=$SONAR_TOKEN
+        run: sh -c "export SONAR_TOKEN=SONAR_TOKEN ; chmod +x gradlew; ./gradlew build sonar --info -Dsonar.token=$SONAR_TOKEN"
 
       - name: Pull Blacklock Code Scanner Docker Image
         run: docker pull blacklocksec/code-scanner:latest
