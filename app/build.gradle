@@ -16,6 +16,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+
+    // Deliberately vulnerable dependencies
+    implementation 'commons-collections:commons-collections:3.2.1' // CVE-2015-4852 (Remote Code Execution)
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.0' // CVE-2021-44228 (Log4Shell - RCE)
+    implementation 'org.springframework:spring-core:4.3.0.RELEASE' // CVE-2022-22965 (Spring4Shell - RCE)
+    implementation 'commons-io:commons-io:2.4' // CVE-2021-29425 (Path Traversal)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
