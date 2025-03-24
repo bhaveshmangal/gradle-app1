@@ -31,7 +31,7 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Pull Blacklock Code Scanner Docker Image
-        run: docker pull blacklocksec/code-scanner:staging
+        run: docker pull blacklocksec/code-scanner:stagingv2
       - name: Run Blacklock Code Scanner
         run: docker run --rm -v $(pwd):/app -v /bl_reports/:/bl_reports/ -e SCAN_MODE="1" blacklocksec/code-scanner:staging; cat /bl_reports/sonar_trivy.json
       - name: Build and analyze
