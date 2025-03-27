@@ -39,7 +39,7 @@ jobs:
         run: docker run --rm -v $(pwd):/app -v /bl_reports/:/bl_reports/ -e SCAN_MODE="1" blacklocksec/code-scanner:v2
       - name: Build and analyze
         env:
-          SONAR_TOKEN:  ${{ secrets.SONAR_TOKEN }} 
-          SONAR_HOST_URL:  ${{ secrets.SONAR_HOST_URL }} 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: sh gradlew build sonar --info -Dsonar.projectKey=BMox05jNy:Dk:Q8s -Dsonar.token=$SONAR_TOKEN -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.externalIssuesReportPaths=$(echo /bl_reports/sonar_trivy.json /bl_reports/sonar_semgrep.json | tr ' ' '\n' | awk '{if (system("[ -f " $0 " ]") == 0) print $0}' | paste -sd ",")
         
