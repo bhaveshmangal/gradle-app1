@@ -1,4 +1,4 @@
-name: Build
+name: Blacklock Code Scanner
 
 on:
   push:
@@ -41,5 +41,5 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: sh gradlew build sonar --info -Dsonar.projectKey=BMox05jNy:Dk:Q8s -Dsonar.token=$SONAR_TOKEN -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.externalIssuesReportPaths=$(echo /bl_reports/sonar_trivy.json /bl_reports/sonar_semgrep.json | tr ' ' '\n' | awk '{if (system("[ -f " $0 " ]") == 0) print $0}' | paste -sd ",")
+        run: sh gradlew build sonar --info -Dsonar.projectKey=DeDkV2LzH7Bqh632 -Dsonar.token=$SONAR_TOKEN -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.externalIssuesReportPaths=$(echo /bl_reports/sonar_trivy.json /bl_reports/sonar_semgrep.json | tr ' ' '\n' | awk '{if (system("[ -f " $0 " ]") == 0) print $0}' | paste -sd ",")
         
